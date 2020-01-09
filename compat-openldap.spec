@@ -4,7 +4,7 @@ Summary: OpenLDAP compatibility shared libraries
 Name: compat-openldap
 Epoch: 1
 Version: 2.3.43
-Release: 3.2%{?dist}
+Release: 5%{?dist}
 License: OpenLDAP
 Group: System Environment/Libraries
 URL: http://www.openldap.org/
@@ -115,6 +115,12 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1:2.3.43-5
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1:2.3.43-4
+- Mass rebuild 2013-12-27
+
 * Tue May 07 2013 Jan Synáček <jsynacek@redhat.com> - 1:2.3.43-3.2
 - Remove undefined rpm macros (#960090)
 
