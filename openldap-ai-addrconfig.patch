@@ -1,0 +1,29 @@
+use AI_ADDRCONFIG if defined in the environment
+
+Author: Jan Vcelak <jvcelak@redhat.com>
+Upstream ITS: #7326
+Resolves: #835013
+
+---
+ libraries/libldap/os-ip.c |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/libraries/libldap/os-ip.c b/libraries/libldap/os-ip.c
+index c95f34f..fe531a7 100644
+--- a/libraries/libldap/os-ip.c
++++ b/libraries/libldap/os-ip.c
+@@ -421,9 +421,8 @@ ldap_connect_to_host(LDAP *ld, Sockbuf *sb,
+ 
+ #if defined( HAVE_GETADDRINFO ) && defined( HAVE_INET_NTOP )
+ 	memset( &hints, '\0', sizeof(hints) );
+-#ifdef USE_AI_ATTRCONFIG /* FIXME: configure test needed */
+-	/* Use AI_ATTRCONFIG only on systems where its known to be needed. */
+-	hints.ai_flags = AI_ATTRCONFIG;
++#ifdef AI_ADDRCONFIG
++	hints.ai_flags = AI_ADDRCONFIG;
+ #endif
+ 	hints.ai_family = ldap_int_inet4or6;
+ 	hints.ai_socktype = socktype;
+-- 
+1.7.10.4
+
